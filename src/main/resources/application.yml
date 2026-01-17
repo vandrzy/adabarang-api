@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/n_days_backend_part2
+    username: root
+    password: ""
+    type: com.zaxxer.hikari.HikariDataSource
+
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 50
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+  flyway:
+    enable: true
+    location: classpath:db/migration
+    baseline-on-migrate: true
